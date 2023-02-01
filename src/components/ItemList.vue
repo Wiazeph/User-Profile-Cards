@@ -1,31 +1,12 @@
 <script setup>
-import { ref } from "vue";
-import axios from "axios";
+import { useList } from "./useList";
 
-const list = ref([]);
-
-function getData() {
-  axios.get("/users.json").then((get_response) => {
-    let data = get_response.data;
-    for (let key in data) {
-      list.value.push({ ...data[key], id: key });
-    }
-  });
-}
-
-function deleteUser(lt) {
-  axios.delete(`/users/${lt.id}.json`).then((delete_response) => {
-    console.log(delete_response);
-    list.value = list.value.filter((i) => i.id !== lt.id);
-  });
-}
-
-getData();
+const { list, deleteUser } = useList();
 </script>
 
 <template>
   <div class="">
-    <div v-if="list.length > 0" class="text-center">
+    <div v-if="list?.length > 0" class="text-center">
       {{ list.length }} veri var
     </div>
 

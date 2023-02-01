@@ -1,6 +1,6 @@
 <script setup>
 import FormSection from "./components/FormSection.vue";
-import Lists from "./components/Lists.vue";
+import Lists from "./components/ItemList.vue";
 </script>
 
 <template>
@@ -9,5 +9,3 @@ import Lists from "./components/Lists.vue";
     <Lists />
   </div>
 </template>
-
-<style scoped></style>

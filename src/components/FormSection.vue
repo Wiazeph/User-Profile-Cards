@@ -1,32 +1,7 @@
 <script setup>
-import { reactive } from "vue";
-import axios from "axios";
+import { useList } from "./useList";
 
-let usersInfo = reactive({
-  name: "",
-  surname: "",
-  age: "",
-  thumbnail: "",
-});
-
-function onSubmit() {
-  if (
-    usersInfo.name !== "" &&
-    usersInfo.surname !== "" &&
-    usersInfo.age !== "" &&
-    usersInfo.thumbnail !== ""
-  ) {
-    axios
-      .post("/users.json", { ...usersInfo, date: new Date() })
-      .then((post_response) => {
-        console.log(post_response);
-        usersInfo = {};
-        alert("Data has been added successfully...");
-      });
-  } else {
-    return alert("Please fill in the blank fields...");
-  }
-}
+const { onSubmit, usersInfo } = useList();
 </script>
 
 <template>
