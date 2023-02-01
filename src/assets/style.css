@@ -4,6 +4,16 @@
 
 @layer base {
   body {
-    @apply flex items-center justify-center h-screen;
+    @apply bg-gray-300;
+  }
+}
+
+@layer components {
+  .info-Input {
+    @apply w-2/3 rounded px-2 h-8 outline-none;
+  }
+
+  .form-section {
+    @apply flex justify-between items-center;
   }
 }

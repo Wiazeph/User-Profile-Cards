@@ -1,7 +1,13 @@
-<script setup></script>
+<script setup>
+import FormSection from "./components/FormSection.vue";
+import Lists from "./components/Lists.vue";
+</script>
 
 <template>
-  <div class="text-5xl font-bold">Vue JS Firebase Realtime Database</div>
+  <div class="container mx-auto py-10 px-20 flex flex-col gap-14">
+    <FormSection />
+    <Lists />
+  </div>
 </template>
 
 <style scoped></style>
