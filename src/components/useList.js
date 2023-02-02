@@ -2,9 +2,9 @@ import axios from "axios";
 
 import { ref, onMounted } from "vue";
 
-export function useList() {
-  const list = ref([]);
+const list = ref([]);
 
+export function useList() {
   async function getUser() {
     const response = await axios.get("/users.json");
 
@@ -16,7 +16,6 @@ export function useList() {
     });
 
     list.value = [...responseList];
-    console.log(responseList);
   }
 
   onMounted(async () => {

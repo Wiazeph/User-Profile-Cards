@@ -26,15 +26,19 @@ async function onSubmit() {
       date: new Date(),
     });
 
-    alert("Data has been added successfully...");
-
     getUser();
 
+    usersInfo.name = "";
+    usersInfo.surname = "";
+    usersInfo.age = "";
+    usersInfo.thumbnail = "";
+
+    console.log("Data has been added successfully...");
+
     return response;
-  } else {
-    // throw new Error("Please fill in the blank fields...");
-    alert("Please fill in the blank fields...");
   }
+
+  alert("Please fill in the blank fields...");
 }
 </script>
 
