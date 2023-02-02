@@ -1,12 +1,27 @@
 <script setup>
+import axios from "axios";
+
 import { useList } from "./useList";
 
-const { list, deleteUser } = useList();
+const { getUser, list } = useList();
+
+async function deleteUser(lt) {
+  const response = await axios.delete(`/users/${lt.id}.json`);
+
+  if (response.status === 200) {
+    list.value = list.value.filter((i) => i.id !== lt.id);
+  }
+
+  alert("Data has been deleted successfully...");
+}
+
+getUser();
+console.log("🚀 ~ file: ItemList.vue:9 ~ getUser", getUser);
 </script>
 
 <template>
   <div class="">
-    <div v-if="list?.length > 0" class="text-center">
+    <div v-if="list.length > 0" class="text-center">
       {{ list.length }} veri var
     </div>
 
