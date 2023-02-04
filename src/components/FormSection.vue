@@ -71,7 +71,7 @@ async function onSubmit() {
         <div class="form-section">
           <label>Age:</label>
           <input
-            type="text"
+            type="number"
             v-model="usersInfo.age"
             placeholder="Age"
             class="info-Input"
@@ -86,7 +86,7 @@ async function onSubmit() {
             class="info-Input"
           />
         </div>
-        <button class="bg-black text-white rounded h-10">Submit</button>
+        <button class="bg-black rounded-md h-10">Submit</button>
       </form>
     </div>
   </div>

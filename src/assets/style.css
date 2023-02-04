@@ -4,13 +4,13 @@
 
 @layer base {
   body {
-    @apply bg-gray-300;
+    @apply bg-[#111827] text-gray-50;
   }
 }
 
 @layer components {
   .info-Input {
-    @apply w-2/3 rounded px-2 h-8 outline-none;
+    @apply w-2/3 rounded px-2 h-8 outline-none text-black;
   }
 
   .form-section {
