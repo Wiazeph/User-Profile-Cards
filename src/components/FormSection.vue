@@ -11,17 +11,28 @@ let usersInfo = reactive({
   name: "",
   surname: "",
   age: "",
+  title: "",
+  email: "",
   thumbnail: "",
 });
 
 async function onSubmit() {
-  const { name, surname, age, thumbnail } = usersInfo;
+  const { name, surname, age, title, email, thumbnail } = usersInfo;
 
-  if (name !== "" && surname !== "" && age !== "" && thumbnail !== "") {
+  if (
+    name !== "" &&
+    surname !== "" &&
+    age !== "" &&
+    title !== "" &&
+    email !== "" &&
+    thumbnail !== ""
+  ) {
     const response = await axios.post("/users.json", {
       name,
       surname,
       age,
+      title,
+      email,
       thumbnail,
       date: new Date(),
     });
@@ -31,6 +42,8 @@ async function onSubmit() {
     usersInfo.name = "";
     usersInfo.surname = "";
     usersInfo.age = "";
+    usersInfo.title = "";
+    usersInfo.email = "";
     usersInfo.thumbnail = "";
 
     console.log("Data has been added successfully...");
@@ -78,11 +91,29 @@ async function onSubmit() {
           />
         </div>
         <div class="form-section">
+          <label>Title/Job</label>
+          <input
+            type="text"
+            v-model="usersInfo.title"
+            placeholder="Title/Job"
+            class="info-Input"
+          />
+        </div>
+        <div class="form-section">
           <label>Thumbnail Link:</label>
           <input
             type="text"
             v-model="usersInfo.thumbnail"
             placeholder="Thumbnail Link"
+            class="info-Input"
+          />
+        </div>
+        <div class="form-section">
+          <label>E-Mail</label>
+          <input
+            type="email"
+            v-model="usersInfo.email"
+            placeholder="E-Mail"
             class="info-Input"
           />
         </div>
