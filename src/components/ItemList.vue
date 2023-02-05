@@ -14,6 +14,12 @@ async function deleteUser(lt) {
     console.log("Data has been deleted successfully...");
   }
 }
+
+async function copyCB(email) {
+  await navigator.clipboard.writeText(email);
+
+  alert("Email has been copied to clipboard...");
+}
 </script>
 
 <template>
@@ -59,7 +65,7 @@ async function deleteUser(lt) {
             />
           </div>
 
-          <div class="flex flex-col gap-3 w-full select-text">
+          <div class="flex flex-col items-center gap-3 w-full select-text">
             <div class="flex items-center justify-center gap-2">
               <div class="user-name">
                 {{ lt.name }}
@@ -76,7 +82,10 @@ async function deleteUser(lt) {
               {{ lt.title }}
             </div>
 
-            <div class="user-email text-center">
+            <div
+              class="user-email w-fit cursor-pointer"
+              @click="copyCB(lt.email)"
+            >
               {{ lt.email }}
             </div>
           </div>
