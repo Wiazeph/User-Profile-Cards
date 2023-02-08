@@ -57,9 +57,7 @@ async function onSubmit() {
 
 <template>
   <div class="flex flex-col items-center gap-12">
-    <h3 class="text-3xl font-semibold">
-      Vue JS Firebase Database - Realtime Database
-    </h3>
+    <h3 class="text-3xl font-semibold">Vue JS User Profile Cards</h3>
 
     <div class="w-[600px] rounded border-4 border-solid border-black">
       <form @submit.prevent="onSubmit" class="flex flex-col gap-5 p-4">
