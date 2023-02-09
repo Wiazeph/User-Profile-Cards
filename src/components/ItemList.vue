@@ -23,8 +23,8 @@ async function copyCB(email) {
 </script>
 
 <template>
-  <div class="user-lists-section flex flex-col items-center">
-    <div class="text-xl w-fit my-8 sm:my-9 md:my-10 lg:my-11 xl:my-12">
+  <div class="user-lists-section">
+    <div class="data-info">
       <div v-if="list.length > 1">
         There are currently {{ list.length }} users' data.
       </div>
@@ -34,20 +34,13 @@ async function copyCB(email) {
       <div v-else>There is no user data.</div>
     </div>
 
-    <div class="user-lists w-full grid grid-cols-2 justify-items-center gap-7">
-      <div
-        class="user-card relative flex items-center justify-between px-6 py-8 text-gray-900 bg-[#b2e5e6] w-full h-[350px] border-[24px] border-[#a0cdcf] rounded-3xl shadow"
-        v-for="(lt, index) in list"
-        :key="lt.id"
-      >
-        <button
-          class="card-delete absolute top-3 right-4 text-xl transition-all duration-300 ease-in-out hover:scale-125 text-red-900"
-          @click="deleteUser(lt)"
-        >
+    <div class="user-lists">
+      <div class="user-card" v-for="(lt, index) in list" :key="lt.id">
+        <button class="user-card-delete" @click="deleteUser(lt)">
           <i class="card-icons fa-solid fa-trash"></i>
         </button>
 
-        <div class="user-userinfo h-full flex flex-col justify-between">
+        <div class="user-card-info">
           <div class="flex flex-col gap-5">
             <div class="flex items-center gap-1 text-2xl font-medium">
               <div class="user-name">
@@ -70,7 +63,7 @@ async function copyCB(email) {
 
           <div class="user-socials">
             <div class="mb-4 text-gray-600 select-none">Follow!</div>
-            <ul class="user-socials-links flex items-center gap-5">
+            <ul class="user-socials-links">
               <li>
                 <a href="" class="social-link hover:bg-[#0a66c2]"
                   ><i class="card-icons fa-brands fa-linkedin"></i
@@ -95,11 +88,7 @@ async function copyCB(email) {
           </div>
         </div>
 
-        <img
-          :src="lt.thumbnail"
-          alt=""
-          class="user-img w-48 h-48 rounded-full hover:scale-105 transition-all duration-300 ease-in-out"
-        />
+        <img :src="lt.thumbnail" alt="" class="user-img" />
 
         <!-- <div
           class="card-info absolute bottom-6 right-6 flex items-center gap-5"

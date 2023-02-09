@@ -8,13 +8,65 @@
   }
 }
 
+@layer components {
+  /* FormSection.vue */
+
+  .submit-btn {
+    @apply bg-black rounded-md h-10;
+  }
+
+  /* FormSection.vue */
+}
+
 @layer utilities {
-  .info-input {
+  /* FormSection.vue */
+
+  .form-section {
+    @apply flex flex-col items-center gap-12;
+  }
+
+  .form-container {
+    @apply w-[600px] rounded border-4 border-solid border-black;
+  }
+
+  .form-section-row {
+    @apply flex justify-between items-center;
+  }
+
+  .form-input {
     @apply w-2/3 rounded px-2 h-8 outline-none text-black;
   }
 
-  .form-section {
-    @apply flex justify-between items-center;
+  /* FormSection.vue */
+
+  /* ItemList.vue */
+
+  .user-lists-section {
+    @apply flex flex-col items-center gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 mt-8 sm:mt-9 md:mt-10 lg:mt-11 xl:mt-12;
+  }
+
+  .data-info {
+    @apply text-xl w-fit;
+  }
+
+  .user-lists {
+    @apply w-full grid grid-cols-2 justify-items-center gap-7;
+  }
+
+  .user-card {
+    @apply relative flex items-center justify-between px-6 py-8 text-gray-900 bg-[#b2e5e6] w-full h-[350px] border-[24px] border-[#a0cdcf] rounded-3xl shadow;
+  }
+
+  .user-card-delete {
+    @apply absolute top-3 right-4 text-xl transition-all duration-300 ease-in-out hover:scale-125 text-red-900;
+  }
+
+  .user-card-info {
+    @apply h-full flex flex-col justify-between;
+  }
+
+  .user-socials-links {
+    @apply flex items-center gap-5;
   }
 
   .social-link {
@@ -24,4 +76,10 @@
   .card-icons {
     @apply text-xl;
   }
+
+  .user-img {
+    @apply w-48 h-48 rounded-full hover:scale-105 transition-all duration-300 ease-in-out;
+  }
+
+  /* user-lists-section */
 }

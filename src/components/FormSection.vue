@@ -56,66 +56,66 @@ async function onSubmit() {
 </script>
 
 <template>
-  <div class="flex flex-col items-center gap-12">
+  <div class="form-section">
     <h3 class="text-3xl font-semibold">Vue JS User Profile Cards</h3>
 
-    <div class="w-[600px] rounded border-4 border-solid border-black">
+    <div class="form-container">
       <form @submit.prevent="onSubmit" class="flex flex-col gap-5 p-4">
-        <div class="form-section">
+        <div class="form-section-row">
           <label>Name:</label>
           <input
             type="text"
             v-model="usersInfo.name"
             placeholder="Name"
-            class="info-input"
+            class="form-input"
           />
         </div>
-        <div class="form-section">
+        <div class="form-section-row">
           <label>Surname:</label>
           <input
             type="text"
             v-model="usersInfo.surname"
             placeholder="Surname"
-            class="info-input"
+            class="form-input"
           />
         </div>
-        <div class="form-section">
+        <div class="form-section-row">
           <label>Age:</label>
           <input
             type="number"
             v-model="usersInfo.age"
             placeholder="Age"
-            class="info-input"
+            class="form-input"
           />
         </div>
-        <div class="form-section">
+        <div class="form-section-row">
           <label>Title/Job</label>
           <input
             type="text"
             v-model="usersInfo.title"
             placeholder="Title/Job"
-            class="info-input"
+            class="form-input"
           />
         </div>
-        <div class="form-section">
+        <div class="form-section-row">
           <label>Thumbnail Link:</label>
           <input
             type="text"
             v-model="usersInfo.thumbnail"
             placeholder="Thumbnail Link"
-            class="info-input"
+            class="form-input"
           />
         </div>
-        <div class="form-section">
+        <div class="form-section-row">
           <label>E-Mail</label>
           <input
             type="email"
             v-model="usersInfo.email"
             placeholder="E-Mail"
-            class="info-input"
+            class="form-input"
           />
         </div>
-        <button class="bg-black rounded-md h-10">Submit</button>
+        <button class="submit-btn">Submit</button>
       </form>
     </div>
   </div>
