@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#111827] text-gray-50;
+    @apply font-poppins bg-[#111827] text-gray-50;
   }
 }
 
