@@ -20,4 +20,8 @@
   .social-link {
     @apply flex items-center justify-center w-11 h-11 rounded-full shadow-[6px_6px_12px_rgb(151,195,196),-6px_-6px_12px_rgb(205,255,255)] transition-all duration-300 ease-in-out hover:text-white hover:-translate-y-2;
   }
+
+  .card-icons {
+    @apply text-xl;
+  }
 }

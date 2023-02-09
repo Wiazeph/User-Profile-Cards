@@ -41,15 +41,15 @@ async function copyCB(email) {
         :key="lt.id"
       >
         <button
-          class="card-delete absolute top-3 right-4 text-xl text-red-900"
+          class="card-delete absolute top-3 right-4 text-xl transition-all duration-300 ease-in-out hover:scale-125 text-red-900"
           @click="deleteUser(lt)"
         >
-          Delete
+          <i class="card-icons fa-solid fa-trash"></i>
         </button>
 
         <div class="user-userinfo h-full flex flex-col justify-between">
           <div class="flex flex-col gap-5">
-            <div class="flex items-center gap-1 text-xl font-medium">
+            <div class="flex items-center gap-1 text-2xl font-medium">
               <div class="user-name">
                 {{ lt.name }}
               </div>
@@ -59,7 +59,7 @@ async function copyCB(email) {
               <div class="user-age select-none">- {{ lt.age }}</div>
             </div>
 
-            <div class="user-title">
+            <div class="user-title text-lg">
               {{ lt.title }}
             </div>
 
@@ -72,16 +72,24 @@ async function copyCB(email) {
             <div class="mb-4 text-gray-600 select-none">Follow!</div>
             <ul class="user-socials-links flex items-center gap-5">
               <li>
-                <a href="" class="social-link hover:bg-[#0a66c2]"></a>
+                <a href="" class="social-link hover:bg-[#0a66c2]"
+                  ><i class="card-icons fa-brands fa-linkedin"></i
+                ></a>
               </li>
               <li>
-                <a href="" class="social-link hover:bg-[#1da1f2]"></a>
+                <a href="" class="social-link hover:bg-[#1da1f2]"
+                  ><i class="card-icons fa-brands fa-twitter"></i
+                ></a>
               </li>
               <li>
-                <a href="" class="social-link hover:bg-[#3f729b]"></a>
+                <a href="" class="social-link hover:bg-[#3f729b]"
+                  ><i class="card-icons fa-brands fa-instagram"></i
+                ></a>
               </li>
               <li>
-                <a href="" class="social-link hover:bg-[#00405d]"></a>
+                <a href="" class="social-link hover:bg-[#00405d]"
+                  ><i class="card-icons fa-brands fa-github"></i
+                ></a>
               </li>
             </ul>
           </div>
