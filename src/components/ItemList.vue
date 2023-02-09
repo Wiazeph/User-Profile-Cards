@@ -34,16 +34,67 @@ async function copyCB(email) {
       <div v-else>There is no user data.</div>
     </div>
 
-    <div
-      class="user-lists w-full grid grid-cols-1 justify-items-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
-    >
+    <div class="user-lists w-full grid grid-cols-2 justify-items-center gap-7">
       <div
-        class="user-card relative p-5 w-80 h-[400px] border border-gray-700 rounded-lg shadow bg-gray-800 select-none flex flex-col gap-2"
+        class="user-card relative flex items-center justify-between px-6 py-8 text-gray-900 bg-[#b2e5e6] w-full h-[350px] border-[24px] border-[#a0cdcf] rounded-3xl shadow"
         v-for="(lt, index) in list"
         :key="lt.id"
       >
-        <div
-          class="card-info absolute right-4 w-[calc(100%-32px)] flex items-center justify-between"
+        <button
+          class="card-delete absolute top-3 right-4 text-xl text-red-900"
+          @click="deleteUser(lt)"
+        >
+          Delete
+        </button>
+
+        <div class="user-userinfo h-full flex flex-col justify-between">
+          <div class="flex flex-col gap-5">
+            <div class="flex items-center gap-1 text-xl font-medium">
+              <div class="user-name">
+                {{ lt.name }}
+              </div>
+              <div class="user-surname">
+                {{ lt.surname }}
+              </div>
+              <div class="user-age select-none">- {{ lt.age }}</div>
+            </div>
+
+            <div class="user-title">
+              {{ lt.title }}
+            </div>
+
+            <div class="user-email cursor-pointer" @click="copyCB(lt.email)">
+              {{ lt.email }}
+            </div>
+          </div>
+
+          <div class="user-socials">
+            <div class="mb-4 text-gray-600 select-none">Follow!</div>
+            <ul class="user-socials-links flex items-center gap-5">
+              <li>
+                <a href="" class="social-link hover:bg-[#0a66c2]"></a>
+              </li>
+              <li>
+                <a href="" class="social-link hover:bg-[#1da1f2]"></a>
+              </li>
+              <li>
+                <a href="" class="social-link hover:bg-[#3f729b]"></a>
+              </li>
+              <li>
+                <a href="" class="social-link hover:bg-[#00405d]"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <img
+          :src="lt.thumbnail"
+          alt=""
+          class="user-img w-48 h-48 rounded-full hover:scale-105 transition-all duration-300 ease-in-out"
+        />
+
+        <!-- <div
+          class="card-info absolute bottom-6 right-6 flex items-center gap-5"
         >
           <div class="card-date text-sm">
             {{ new Date(lt.date).toLocaleDateString() }}
@@ -51,52 +102,7 @@ async function copyCB(email) {
           <div class="card-number bg-gray-600 px-2 rounded-full">
             {{ ++index }}
           </div>
-        </div>
-
-        <div
-          class="user-userinfo h-full flex flex-col items-center justify-between gap-3 text-gray-100"
-        >
-          <div
-            class="user-img w-40 h-40 hover:scale-105 transition-all ease-in-out"
-          >
-            <img
-              class="rounded-full w-full h-full object-cover"
-              :src="lt.thumbnail"
-            />
-          </div>
-
-          <div class="flex flex-col items-center gap-3 w-full select-text">
-            <div class="flex items-center justify-center gap-2">
-              <div class="user-name">
-                {{ lt.name }}
-              </div>
-              <div class="user-surname">
-                {{ lt.surname }}
-              </div>
-              <div class="user-age bg-gray-600 px-2 rounded-full select-none">
-                {{ lt.age }}
-              </div>
-            </div>
-
-            <div class="user-title text-center">
-              {{ lt.title }}
-            </div>
-
-            <div
-              class="user-email w-fit cursor-pointer"
-              @click="copyCB(lt.email)"
-            >
-              {{ lt.email }}
-            </div>
-          </div>
-
-          <button
-            class="card-delete bg-red-100 h-10 w-full rounded-md text-black"
-            @click="deleteUser(lt)"
-          >
-            Delete User
-          </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

@@ -67,7 +67,7 @@ async function onSubmit() {
             type="text"
             v-model="usersInfo.name"
             placeholder="Name"
-            class="info-Input"
+            class="info-input"
           />
         </div>
         <div class="form-section">
@@ -76,7 +76,7 @@ async function onSubmit() {
             type="text"
             v-model="usersInfo.surname"
             placeholder="Surname"
-            class="info-Input"
+            class="info-input"
           />
         </div>
         <div class="form-section">
@@ -85,7 +85,7 @@ async function onSubmit() {
             type="number"
             v-model="usersInfo.age"
             placeholder="Age"
-            class="info-Input"
+            class="info-input"
           />
         </div>
         <div class="form-section">
@@ -94,7 +94,7 @@ async function onSubmit() {
             type="text"
             v-model="usersInfo.title"
             placeholder="Title/Job"
-            class="info-Input"
+            class="info-input"
           />
         </div>
         <div class="form-section">
@@ -103,7 +103,7 @@ async function onSubmit() {
             type="text"
             v-model="usersInfo.thumbnail"
             placeholder="Thumbnail Link"
-            class="info-Input"
+            class="info-input"
           />
         </div>
         <div class="form-section">
@@ -112,7 +112,7 @@ async function onSubmit() {
             type="email"
             v-model="usersInfo.email"
             placeholder="E-Mail"
-            class="info-Input"
+            class="info-input"
           />
         </div>
         <button class="bg-black rounded-md h-10">Submit</button>
