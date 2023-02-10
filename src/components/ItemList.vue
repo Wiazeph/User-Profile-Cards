@@ -58,8 +58,12 @@ async function copyCB(email) {
               <div class="user-age select-none">- {{ lt.age }}</div>
             </div>
 
-            <div class="user-title text-lg">
+            <div class="user-title">
               {{ lt.title }}
+              <div class="user-company" v-if="lt.company">
+                - at
+                <div class="text-gray-900 select-text">@{{ lt.company }}</div>
+              </div>
             </div>
 
             <div class="user-email cursor-pointer" @click="copyCB(lt.email)">
@@ -67,28 +71,43 @@ async function copyCB(email) {
             </div>
           </div>
 
-          <div class="user-socials">
+          <div
+            class="user-socials"
+            v-if="lt.linkedin || lt.twitter || lt.instagram || lt.github"
+          >
             <div class="mb-4 text-gray-600 text-sm sm:text-base select-none">
               Follow!
             </div>
             <ul class="user-socials-links">
-              <li>
-                <a href="" class="social-link hover:bg-[#0a66c2]"
+              <li v-if="lt.linkedin">
+                <a
+                  :href="`https://www.linkedin.com/in/${lt.linkedin}`"
+                  target="_blank"
+                  class="social-link hover:bg-[#0a66c2]"
                   ><i class="card-icons fa-brands fa-linkedin"></i
                 ></a>
               </li>
-              <li>
-                <a href="" class="social-link hover:bg-[#1da1f2]"
+              <li v-if="lt.twitter">
+                <a
+                  :href="`https://www.twitter.com/${lt.twitter}`"
+                  target="_blank"
+                  class="social-link hover:bg-[#1da1f2]"
                   ><i class="card-icons fa-brands fa-twitter"></i
                 ></a>
               </li>
-              <li>
-                <a href="" class="social-link hover:bg-[#3f729b]"
+              <li v-if="lt.instagram">
+                <a
+                  :href="`https://www.instagram.com/${lt.instagram}`"
+                  target="_blank"
+                  class="social-link hover:bg-[#3f729b]"
                   ><i class="card-icons fa-brands fa-instagram"></i
                 ></a>
               </li>
-              <li>
-                <a href="" class="social-link hover:bg-[#00405d]"
+              <li v-if="lt.github">
+                <a
+                  :href="`https://www.github.com/${lt.github}`"
+                  target="_blank"
+                  class="social-link hover:bg-[#00405d]"
                   ><i class="card-icons fa-brands fa-github"></i
                 ></a>
               </li>

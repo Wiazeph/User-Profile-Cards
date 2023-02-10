@@ -12,12 +12,29 @@ let usersInfo = reactive({
   surname: "",
   age: "",
   title: "",
+  company: "",
   email: "",
+  linkedin: "",
+  twitter: "",
+  instagram: "",
+  github: "",
   thumbnail: "",
 });
 
 async function onSubmit() {
-  const { name, surname, age, title, email, thumbnail } = usersInfo;
+  const {
+    name,
+    surname,
+    age,
+    title,
+    company,
+    email,
+    linkedin,
+    twitter,
+    instagram,
+    github,
+    thumbnail,
+  } = usersInfo;
 
   if (
     name !== "" &&
@@ -32,7 +49,12 @@ async function onSubmit() {
       surname,
       age,
       title,
+      company,
       email,
+      linkedin,
+      twitter,
+      instagram,
+      github,
       thumbnail,
       date: new Date(),
     });
@@ -43,7 +65,12 @@ async function onSubmit() {
     usersInfo.surname = "";
     usersInfo.age = "";
     usersInfo.title = "";
+    usersInfo.company = "";
     usersInfo.email = "";
+    usersInfo.linkedin = "";
+    usersInfo.twitter = "";
+    usersInfo.instagram = "";
+    usersInfo.github = "";
     usersInfo.thumbnail = "";
 
     console.log("Data has been added successfully...");
@@ -60,9 +87,9 @@ async function onSubmit() {
     <h3 class="text-3xl font-semibold">Vue JS User Profile Cards</h3>
 
     <div class="form-container">
-      <form @submit.prevent="onSubmit" class="flex flex-col gap-5 p-4">
+      <form @submit.prevent="onSubmit" class="flex flex-col gap-3 p-4">
         <div class="form-section-row">
-          <label>Name:</label>
+          <label>Name:<span class="text-red-600">*</span></label>
           <input
             type="text"
             v-model="usersInfo.name"
@@ -71,7 +98,7 @@ async function onSubmit() {
           />
         </div>
         <div class="form-section-row">
-          <label>Surname:</label>
+          <label>Surname:<span class="text-red-600">*</span></label>
           <input
             type="text"
             v-model="usersInfo.surname"
@@ -80,7 +107,7 @@ async function onSubmit() {
           />
         </div>
         <div class="form-section-row">
-          <label>Age:</label>
+          <label>Age:<span class="text-red-600">*</span></label>
           <input
             type="number"
             v-model="usersInfo.age"
@@ -89,7 +116,7 @@ async function onSubmit() {
           />
         </div>
         <div class="form-section-row">
-          <label>Title/Job</label>
+          <label>Title/Job:<span class="text-red-600">*</span></label>
           <input
             type="text"
             v-model="usersInfo.title"
@@ -98,16 +125,16 @@ async function onSubmit() {
           />
         </div>
         <div class="form-section-row">
-          <label>Thumbnail Link:</label>
+          <label>Company Name:</label>
           <input
             type="text"
-            v-model="usersInfo.thumbnail"
-            placeholder="Thumbnail Link"
+            v-model="usersInfo.company"
+            placeholder="Company Name"
             class="form-input"
           />
         </div>
         <div class="form-section-row">
-          <label>E-Mail</label>
+          <label>E-Mail<span class="text-red-600">*</span></label>
           <input
             type="email"
             v-model="usersInfo.email"
@@ -115,6 +142,52 @@ async function onSubmit() {
             class="form-input"
           />
         </div>
+        <div class="form-section-row">
+          <label>Linkedin Account:</label>
+          <input
+            type="text"
+            v-model="usersInfo.linkedin"
+            placeholder="Linkedin Account"
+            class="form-input"
+          />
+        </div>
+        <div class="form-section-row">
+          <label>Twitter Account:</label>
+          <input
+            type="text"
+            v-model="usersInfo.twitter"
+            placeholder="Twitter Account"
+            class="form-input"
+          />
+        </div>
+        <div class="form-section-row">
+          <label>Instagram Account:</label>
+          <input
+            type="text"
+            v-model="usersInfo.instagram"
+            placeholder="Instagram Account"
+            class="form-input"
+          />
+        </div>
+        <div class="form-section-row">
+          <label>GitHub Account:</label>
+          <input
+            type="text"
+            v-model="usersInfo.github"
+            placeholder="GitHub Account"
+            class="form-input"
+          />
+        </div>
+        <div class="form-section-row">
+          <label>Thumbnail Link:<span class="text-red-600">*</span></label>
+          <input
+            type="text"
+            v-model="usersInfo.thumbnail"
+            placeholder="Thumbnail Link"
+            class="form-input"
+          />
+        </div>
+
         <button class="submit-btn">Submit</button>
       </form>
     </div>
