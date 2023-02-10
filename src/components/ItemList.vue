@@ -66,7 +66,7 @@ async function copyCB(email) {
               </div>
             </div>
 
-            <div class="user-email cursor-pointer" @click="copyCB(lt.email)">
+            <div class="user-email" @click="copyCB(lt.email)">
               {{ lt.email }}
             </div>
           </div>

@@ -19,6 +19,14 @@
 }
 
 @layer utilities {
+  /* App.vue */
+
+  .app-container {
+    @apply container mx-auto mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8 mb-7 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-11 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20;
+  }
+
+  /* App.vue */
+
   /* FormSection.vue */
 
   .form-section {
@@ -75,6 +83,10 @@
 
   .user-company {
     @apply flex items-center gap-1 select-none text-gray-600;
+  }
+
+  .user-email {
+    @apply transition-all duration-200 ease-in-out hover:text-gray-500 cursor-pointer;
   }
 
   .user-socials-links {
