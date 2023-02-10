@@ -57,6 +57,10 @@
     @apply relative flex flex-col-reverse sm:flex-row items-center justify-between gap-7 sm:gap-0 px-6 py-8 text-gray-900 bg-[#b2e5e6] min-w-[350px] w-full max-w-[415px] sm:max-w-[660px] sm:h-[350px] border-[24px] border-[#a0cdcf] rounded-3xl shadow;
   }
 
+  .card-number {
+    @apply absolute top-3 left-4 sm:top-auto sm:left-auto sm:bottom-3 sm:right-4 font-medium select-none;
+  }
+
   .user-card-delete {
     @apply absolute top-3 right-4 text-xl transition-all duration-300 ease-in-out hover:scale-125 text-red-900;
   }

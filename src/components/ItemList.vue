@@ -36,6 +36,10 @@ async function copyCB(email) {
 
     <div class="user-lists">
       <div class="user-card" v-for="(lt, index) in list" :key="lt.id">
+        <div class="card-number">
+          {{ ++index }}
+        </div>
+
         <button class="user-card-delete" @click="deleteUser(lt)">
           <i class="card-icons fa-solid fa-trash"></i>
         </button>
@@ -94,14 +98,9 @@ async function copyCB(email) {
 
         <img :src="lt.thumbnail" alt="" class="user-img" />
 
-        <!-- <div
-          class="card-info absolute bottom-6 right-6 flex items-center gap-5"
-        >
+        <!-- <div class="card-info absolute bottom-6 right-6">
           <div class="card-date text-sm">
             {{ new Date(lt.date).toLocaleDateString() }}
-          </div>
-          <div class="card-number bg-gray-600 px-2 rounded-full">
-            {{ ++index }}
           </div>
         </div> -->
       </div>
