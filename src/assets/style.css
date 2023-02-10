@@ -42,19 +42,19 @@
   /* ItemList.vue */
 
   .user-lists-section {
-    @apply flex flex-col items-center gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 mt-8 sm:mt-9 md:mt-10 lg:mt-11 xl:mt-12;
+    @apply flex flex-col items-center justify-center;
   }
 
   .data-info {
-    @apply text-xl w-fit;
+    @apply text-lg md:text-xl w-fit text-center my-8 sm:my-9 md:my-10 lg:my-11 xl:my-12;
   }
 
   .user-lists {
-    @apply w-full grid grid-cols-2 justify-items-center gap-7;
+    @apply w-full grid grid-cols-1 xl:grid-cols-2 justify-items-center gap-4 sm:gap-5 md:gap-6 lg:gap-7;
   }
 
   .user-card {
-    @apply relative flex items-center justify-between px-6 py-8 text-gray-900 bg-[#b2e5e6] w-full h-[350px] border-[24px] border-[#a0cdcf] rounded-3xl shadow;
+    @apply relative flex flex-col-reverse sm:flex-row items-center justify-between gap-7 sm:gap-0 px-6 py-8 text-gray-900 bg-[#b2e5e6] min-w-[350px] w-full max-w-[415px] sm:max-w-[660px] sm:h-[350px] border-[24px] border-[#a0cdcf] rounded-3xl shadow;
   }
 
   .user-card-delete {
@@ -62,11 +62,11 @@
   }
 
   .user-card-info {
-    @apply h-full flex flex-col justify-between;
+    @apply w-full sm:w-fit sm:h-full flex flex-col text-center sm:text-left justify-between gap-7 sm:gap-0;
   }
 
   .user-socials-links {
-    @apply flex items-center gap-5;
+    @apply flex items-center justify-evenly sm:justify-start sm:gap-5;
   }
 
   .social-link {
@@ -78,7 +78,7 @@
   }
 
   .user-img {
-    @apply w-48 h-48 rounded-full hover:scale-105 transition-all duration-300 ease-in-out;
+    @apply w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 2xl:w-48 2xl:h-48 rounded-full object-cover hover:scale-105 transition-all duration-300 ease-in-out;
   }
 
   /* user-lists-section */

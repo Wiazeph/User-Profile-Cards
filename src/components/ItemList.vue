@@ -41,8 +41,10 @@ async function copyCB(email) {
         </button>
 
         <div class="user-card-info">
-          <div class="flex flex-col gap-5">
-            <div class="flex items-center gap-1 text-2xl font-medium">
+          <div class="flex flex-col gap-3 sm:gap-4 md:gap-5">
+            <div
+              class="flex items-center justify-center sm:justify-start gap-1 text-xl sm:text-2xl font-medium"
+            >
               <div class="user-name">
                 {{ lt.name }}
               </div>
@@ -62,7 +64,9 @@ async function copyCB(email) {
           </div>
 
           <div class="user-socials">
-            <div class="mb-4 text-gray-600 select-none">Follow!</div>
+            <div class="mb-4 text-gray-600 text-sm sm:text-base select-none">
+              Follow!
+            </div>
             <ul class="user-socials-links">
               <li>
                 <a href="" class="social-link hover:bg-[#0a66c2]"
