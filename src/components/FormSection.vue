@@ -16,7 +16,6 @@ let usersInfo = reactive({
   email: "",
   linkedin: "",
   twitter: "",
-  instagram: "",
   github: "",
   thumbnail: "",
 });
@@ -31,7 +30,6 @@ async function onSubmit() {
     email,
     linkedin,
     twitter,
-    instagram,
     github,
     thumbnail,
   } = usersInfo;
@@ -53,7 +51,6 @@ async function onSubmit() {
       email,
       linkedin,
       twitter,
-      instagram,
       github,
       thumbnail,
       date: new Date(),
@@ -69,7 +66,6 @@ async function onSubmit() {
     usersInfo.email = "";
     usersInfo.linkedin = "";
     usersInfo.twitter = "";
-    usersInfo.instagram = "";
     usersInfo.github = "";
     usersInfo.thumbnail = "";
 
@@ -87,7 +83,7 @@ async function onSubmit() {
     <h3 class="text-3xl font-semibold">Vue JS User Profile Cards</h3>
 
     <div class="form-container">
-      <form @submit.prevent="onSubmit" class="flex flex-col gap-3 p-4">
+      <form @submit.prevent="onSubmit" class="form-submit">
         <div class="form-section-row">
           <label>Name:<span class="text-red-600">*</span></label>
           <input
@@ -157,15 +153,6 @@ async function onSubmit() {
             type="text"
             v-model="usersInfo.twitter"
             placeholder="Twitter Account"
-            class="form-input"
-          />
-        </div>
-        <div class="form-section-row">
-          <label>Instagram Account:</label>
-          <input
-            type="text"
-            v-model="usersInfo.instagram"
-            placeholder="Instagram Account"
             class="form-input"
           />
         </div>

@@ -73,7 +73,7 @@ async function copyCB(email) {
 
           <div
             class="user-socials"
-            v-if="lt.linkedin || lt.twitter || lt.instagram || lt.github"
+            v-if="lt.linkedin || lt.twitter || lt.github"
           >
             <div class="mb-4 text-gray-600 text-sm sm:text-base select-none">
               Follow!
@@ -93,14 +93,6 @@ async function copyCB(email) {
                   target="_blank"
                   class="social-link hover:bg-[#1da1f2]"
                   ><i class="card-icons fa-brands fa-twitter"></i
-                ></a>
-              </li>
-              <li v-if="lt.instagram">
-                <a
-                  :href="`https://www.instagram.com/${lt.instagram}`"
-                  target="_blank"
-                  class="social-link hover:bg-[#3f729b]"
-                  ><i class="card-icons fa-brands fa-instagram"></i
                 ></a>
               </li>
               <li v-if="lt.github">
