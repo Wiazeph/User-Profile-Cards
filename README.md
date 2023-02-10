@@ -1,5 +1,17 @@
 # VueJS-User-Profile-Cards
 
+#### Add your "Realtime Database Resource Link" in "src/main.js ( axios.defaults.baseURL = '...'; )"
+
+#### To use Firebase Database:
+
+```
+https://firebase.google.com/
+https://firebase.google.com/docs/reference/rest/database
+https://console.firebase.google.com/
+```
+
+---
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
