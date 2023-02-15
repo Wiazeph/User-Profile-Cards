@@ -78,6 +78,10 @@
     @apply w-8 h-8 flex items-center justify-center text-white rounded-full border border-white text-sm;
   }
 
+  .card-delete {
+    @apply hover:text-red-300 hover:border-red-300 transition-all duration-200 ease-in-out;
+  }
+
   .card-header-bg {
     @apply w-[calc(100%+40px)] h-[104px] bg-primaryColor absolute -top-6 -left-5 rotate-[10deg] before:bg-inherit before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-rotate-[20deg];
   }
@@ -107,11 +111,11 @@
   }
 
   .user-socials-links {
-    @apply flex items-center justify-center gap-3;
+    @apply flex items-center justify-center gap-5;
   }
 
   .social-link {
-    @apply rounded-full w-8 h-8 flex items-center justify-center text-white transition-all ease-in-out duration-300;
+    @apply rounded-full flex items-center justify-center text-white transition-all ease-in-out duration-300;
   }
 
   .social-link-icon {

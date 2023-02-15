@@ -12,7 +12,22 @@ const { getUser } = useList();
 
 const formRef = ref();
 
-const FormValidationSchema = yup.object({
+// Custom error messages
+yup.setLocale({
+  mixed: {
+    required: "This field is required.",
+  },
+  string: {
+    email: "'E-Mail' must be a valid.",
+    url: "'Thumbnail' must be a valid img URL.",
+  },
+  number: {
+    positive: "'Age' must be a positive number.",
+    integer: "'Age' must be an integer.",
+  },
+});
+
+let FormValidationSchema = yup.object({
   name: yup.string().required(),
   surname: yup.string().required(),
   age: yup.number().required().positive().integer(),
@@ -27,7 +42,6 @@ const FormValidationSchema = yup.object({
 
 async function onSubmit(values) {
   await axios.post("/users.json", {
-    date: new Date(),
     ...values,
   });
 
@@ -81,8 +95,8 @@ async function onSubmit(values) {
         </div>
 
         <div class="form-section-row">
-          <label>Email:<span class="text-red-600">*</span></label>
-          <Field name="email" placeholder="Email" class="form-input" />
+          <label>E-Mail:<span class="text-red-600">*</span></label>
+          <Field name="email" placeholder="E-Mail" class="form-input" />
           <ErrorMessage name="email" />
         </div>
 
@@ -107,10 +121,10 @@ async function onSubmit(values) {
         </div>
 
         <div class="form-section-row">
-          <label>Github Account:</label>
+          <label>GitHub Account:</label>
           <Field
             name="github"
-            placeholder="Github Account"
+            placeholder="GitHub Account"
             class="form-input"
           />
           <ErrorMessage name="github" />
