@@ -19,6 +19,10 @@
     @apply bg-gray-100 hover:bg-gray-200;
   }
 
+  .clean-btn {
+    @apply bg-red-400 hover:bg-red-500;
+  }
+
   /* FormSection.vue */
 }
 

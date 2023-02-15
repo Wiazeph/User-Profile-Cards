@@ -50,6 +50,10 @@ async function onSubmit(values) {
 
   console.log("Data has been added successfully...");
 }
+
+async function formClean() {
+  formRef.value.resetForm();
+}
 </script>
 
 <template>
@@ -168,6 +172,7 @@ async function onSubmit(values) {
 
         <div class="form-buttons">
           <button class="btn submit-btn">Submit</button>
+          <button class="btn clean-btn" @click="formClean()">Clean</button>
         </div>
       </Form>
     </div>
