@@ -66,7 +66,7 @@
   }
 
   .user-card {
-    @apply relative overflow-hidden min-w-[285px] w-full max-w-[315px] bg-white pt-8 flex flex-col items-center shadow-lg;
+    @apply relative overflow-hidden min-w-[285px] w-full max-w-[315px] bg-white pt-8 flex flex-col items-center shadow-[0_10px_7px_-5px_rgba(0,0,0,0.40)];
   }
 
   .card-base {
