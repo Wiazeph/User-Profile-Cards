@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-poppins bg-white text-black;
+    @apply font-poppins bg-[#c5cae9] text-black;
   }
 }
 
@@ -66,48 +66,57 @@
   }
 
   .user-card {
-    @apply relative flex flex-col-reverse sm:flex-row items-center justify-between gap-7 sm:gap-0 px-6 py-8 text-gray-900 bg-[#b2e5e6] min-w-[350px] w-full max-w-[415px] sm:max-w-[660px] xl:w-[calc(50%-14px)]  sm:h-[350px] border-[24px] border-[#a0cdcf] rounded-3xl shadow-[0_0_10px_rgba(0,0,0,0.3)];
+    @apply relative overflow-hidden min-w-[285px] w-full max-w-[315px] bg-white pt-8 flex flex-col items-center shadow-lg;
   }
 
-  .card-number {
-    @apply absolute top-3 left-4 sm:top-auto sm:left-auto sm:bottom-3 sm:right-4 font-medium select-none;
+  .card-base {
+    @apply w-[calc(100%-26px)] absolute top-[19px] left-1/2 -translate-x-1/2  h-5 flex items-center justify-between z-10 select-none;
   }
 
-  .user-card-delete {
-    @apply absolute top-3 right-4 text-xl transition-all duration-300 ease-in-out hover:scale-125 text-red-700;
+  .card-number,
+  .card-delete {
+    @apply w-8 h-8 flex items-center justify-center text-white rounded-full border border-white text-sm;
   }
 
-  .user-card-info {
-    @apply w-full sm:w-fit flex flex-col text-center sm:text-left gap-5;
-  }
-
-  .user-title {
-    @apply flex items-center gap-1;
-  }
-
-  .user-company {
-    @apply flex items-center gap-1 select-none text-gray-600;
-  }
-
-  .user-email {
-    @apply transition-all duration-200 ease-in-out hover:text-gray-500 cursor-pointer;
-  }
-
-  .user-socials-links {
-    @apply flex items-center justify-evenly sm:justify-start sm:gap-5;
-  }
-
-  .social-link {
-    @apply flex items-center justify-center w-11 h-11 rounded-full shadow-[6px_6px_12px_rgb(151,195,196),-6px_-6px_12px_rgb(205,255,255)] transition-all duration-300 ease-in-out hover:text-white hover:-translate-y-2;
-  }
-
-  .card-icons {
-    @apply text-xl;
+  .card-header-bg {
+    @apply w-[calc(100%+40px)] h-[104px] bg-primaryColor absolute -top-6 -left-5 rotate-[10deg] before:bg-inherit before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-rotate-[20deg];
   }
 
   .user-img {
-    @apply w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 2xl:w-48 2xl:h-48 rounded-full object-cover hover:scale-105 transition-all duration-300 ease-in-out;
+    @apply h-28 w-28 rounded-full object-cover hover:scale-105 transition-all duration-300 ease-in-out select-none z-10 border-4 border-white;
   }
 
-  /* user-lists-section */
+  .user-info {
+    @apply w-[calc(100%-40px)] flex flex-col gap-4 items-center z-10 my-5;
+  }
+
+  .user-title {
+    @apply flex flex-col items-center justify-center gap-1;
+  }
+
+  .user-company {
+    @apply flex gap-1 text-primaryColor select-none;
+  }
+
+  .user-email {
+    @apply hover:text-gray-500 transition-all ease-in-out duration-300 cursor-pointer;
+  }
+
+  .user-socials {
+    @apply w-full bg-primaryColor py-3 flex flex-col items-center gap-2 z-10;
+  }
+
+  .user-socials-links {
+    @apply flex items-center justify-center gap-3;
+  }
+
+  .social-link {
+    @apply rounded-full w-8 h-8 flex items-center justify-center text-white transition-all ease-in-out duration-300;
+  }
+
+  .social-link-icon {
+    @apply text-xl;
+  }
+
+  /* ItemList.vue */
 }

@@ -36,84 +36,71 @@ async function copyCB(email) {
 
     <div class="user-lists">
       <div class="user-card" v-for="(lt, index) in list" :key="lt.id">
-        <div class="card-number">
-          {{ ++index }}
-        </div>
-
-        <button class="user-card-delete" @click="deleteUser(lt)">
-          <i class="card-icons fa-solid fa-trash"></i>
-        </button>
-
-        <div class="user-card-info">
-          <div class="flex flex-col gap-3 sm:gap-4 md:gap-5">
-            <div
-              class="flex items-center justify-center sm:justify-start gap-1 text-xl sm:text-2xl font-medium"
-            >
-              <div class="user-name">
-                {{ lt.name }}
-              </div>
-              <div class="user-surname">
-                {{ lt.surname }}
-              </div>
-              <div class="user-age select-none">- {{ lt.age }}</div>
-            </div>
-
-            <div class="user-title">
-              {{ lt.title }}
-              <div class="user-company" v-if="lt.company">
-                - at
-                <div class="text-gray-900 select-text">@{{ lt.company }}</div>
-              </div>
-            </div>
-
-            <div class="user-email" @click="copyCB(lt.email)">
-              {{ lt.email }}
-            </div>
+        <div class="card-base">
+          <div class="card-number">
+            {{ ++index }}
           </div>
 
-          <div
-            class="user-socials"
-            v-if="lt.linkedin || lt.twitter || lt.github"
-          >
-            <div class="mb-4 text-gray-600 text-sm sm:text-base select-none">
-              Follow!
-            </div>
-            <ul class="user-socials-links">
-              <li v-if="lt.linkedin">
-                <a
-                  :href="`https://www.linkedin.com/in/${lt.linkedin}`"
-                  target="_blank"
-                  class="social-link hover:bg-[#0a66c2]"
-                  ><i class="card-icons fa-brands fa-linkedin"></i
-                ></a>
-              </li>
-              <li v-if="lt.twitter">
-                <a
-                  :href="`https://www.twitter.com/${lt.twitter}`"
-                  target="_blank"
-                  class="social-link hover:bg-[#1da1f2]"
-                  ><i class="card-icons fa-brands fa-twitter"></i
-                ></a>
-              </li>
-              <li v-if="lt.github">
-                <a
-                  :href="`https://www.github.com/${lt.github}`"
-                  target="_blank"
-                  class="social-link hover:bg-[#00405d]"
-                  ><i class="card-icons fa-brands fa-github"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
+          <button class="card-delete" @click="deleteUser(lt)">
+            <i class="card-delete-icon fa-solid fa-trash"></i>
+          </button>
         </div>
+        <div class="card-header-bg"></div>
 
         <img :src="lt.thumbnail" alt="" class="user-img" />
 
-        <!-- <div class="card-info absolute bottom-6 right-6">
-          <div class="card-date text-sm">
-            {{ new Date(lt.date).toLocaleDateString() }}
+        <div class="user-info">
+          <div class="flex items-center justify-center gap-1 text-lg font-bold">
+            <div class="user-fullname">{{ lt.name }} {{ lt.surname }}</div>
+
+            <div class="user-age select-none">- {{ lt.age }}</div>
           </div>
-        </div> -->
+
+          <div class="user-title">
+            <div class="text-center">
+              {{ lt.title }}
+            </div>
+
+            <div class="user-company" v-if="lt.company">
+              - at
+              <div class="text-black select-text">@{{ lt.company }}</div>
+            </div>
+          </div>
+
+          <div class="user-email" @click="copyCB(lt.email)">
+            {{ lt.email }}
+          </div>
+        </div>
+
+        <div class="user-socials" v-if="lt.linkedin || lt.twitter || lt.github">
+          <div class="text-white text-sm select-none">Follow!</div>
+          <ul class="user-socials-links">
+            <li v-if="lt.linkedin">
+              <a
+                :href="`https://www.linkedin.com/in/${lt.linkedin}`"
+                target="_blank"
+                class="social-link hover:text-[#0a66c2]"
+                ><i class="social-link-icon fa-brands fa-linkedin"></i
+              ></a>
+            </li>
+            <li v-if="lt.twitter">
+              <a
+                :href="`https://www.twitter.com/${lt.twitter}`"
+                target="_blank"
+                class="social-link hover:text-[#1da1f2]"
+                ><i class="social-link-icon fa-brands fa-twitter"></i
+              ></a>
+            </li>
+            <li v-if="lt.github">
+              <a
+                :href="`https://www.github.com/${lt.github}`"
+                target="_blank"
+                class="social-link hover:text-[#00405d]"
+                ><i class="social-link-icon fa-brands fa-github"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
