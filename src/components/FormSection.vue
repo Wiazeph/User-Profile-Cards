@@ -23,7 +23,6 @@ yup.setLocale({
   },
   number: {
     positive: "'Age' must be a positive number.",
-    integer: "'Age' must be an integer.",
   },
 });
 
@@ -65,78 +64,111 @@ async function onSubmit(values) {
         :validation-schema="FormValidationSchema"
       >
         <div class="form-section-row">
-          <label>Name:<span class="text-red-600">*</span></label>
+          <div class="row-top"></div>
+          <div class="row-top">
+            <label>Name:<span class="text-red-600">*</span></label>
+            <ErrorMessage name="name" class="error-message" />
+          </div>
+
           <Field name="name" placeholder="Name" class="form-input" />
-          <ErrorMessage name="name" />
         </div>
 
         <div class="form-section-row">
-          <label>Surname:<span class="text-red-600">*</span></label>
+          <div class="row-top">
+            <label>Surname:<span class="text-red-600">*</span></label>
+            <ErrorMessage name="surname" class="error-message" />
+          </div>
+
           <Field name="surname" placeholder="Surname" class="form-input" />
-          <ErrorMessage name="surname" />
         </div>
 
         <div class="form-section-row">
-          <label>Age:<span class="text-red-600">*</span></label>
+          <div class="row-top">
+            <label>Age:<span class="text-red-600">*</span></label>
+            <ErrorMessage name="age" class="error-message" />
+          </div>
+
           <Field name="age" placeholder="Age" class="form-input" />
-          <ErrorMessage name="age" />
         </div>
 
         <div class="form-section-row">
-          <label>Title:<span class="text-red-600">*</span></label>
+          <div class="row-top">
+            <label>Title:<span class="text-red-600">*</span></label>
+            <ErrorMessage name="title" class="error-message" />
+          </div>
+
           <Field name="title" placeholder="Title" class="form-input" />
-          <ErrorMessage name="title" />
         </div>
 
         <div class="form-section-row">
-          <label>Company:</label>
+          <div class="row-top">
+            <label>Company:</label>
+            <ErrorMessage name="company" class="error-message" />
+          </div>
+
           <Field name="company" placeholder="Company" class="form-input" />
-          <ErrorMessage name="company" />
         </div>
 
         <div class="form-section-row">
-          <label>E-Mail:<span class="text-red-600">*</span></label>
+          <div class="row-top">
+            <label>E-Mail:<span class="text-red-600">*</span></label>
+            <ErrorMessage name="email" class="error-message" />
+          </div>
+
           <Field name="email" placeholder="E-Mail" class="form-input" />
-          <ErrorMessage name="email" />
         </div>
 
         <div class="form-section-row">
-          <label>LinkedIn Account:</label>
+          <div class="row-top">
+            <label>LinkedIn Account:</label>
+            <ErrorMessage name="linkedin" class="error-message" />
+          </div>
+
           <Field
             name="linkedin"
             placeholder="LinkedIn Account"
             class="form-input"
           />
-          <ErrorMessage name="linkedin" />
         </div>
 
         <div class="form-section-row">
-          <label>Twitter Account:</label>
+          <div class="row-top">
+            <label>Twitter Account:</label>
+            <ErrorMessage name="twitter" class="error-message" />
+          </div>
+
           <Field
             name="twitter"
             placeholder="Twitter Account"
             class="form-input"
           />
-          <ErrorMessage name="twitter" />
         </div>
 
         <div class="form-section-row">
-          <label>GitHub Account:</label>
+          <div class="row-top">
+            <label>GitHub Account:</label>
+            <ErrorMessage name="github" class="error-message" />
+          </div>
+
           <Field
             name="github"
             placeholder="GitHub Account"
             class="form-input"
           />
-          <ErrorMessage name="github" />
         </div>
 
         <div class="form-section-row">
-          <label>Thumbnail:<span class="text-red-600">*</span></label>
+          <div class="row-top">
+            <label>Thumbnail:<span class="text-red-600">*</span></label>
+            <ErrorMessage name="thumbnail" class="error-message" />
+          </div>
+
           <Field name="thumbnail" placeholder="Thumbnail" class="form-input" />
-          <ErrorMessage name="thumbnail" />
         </div>
 
-        <button class="submit-btn">Submit</button>
+        <div class="form-buttons">
+          <button class="btn submit-btn">Submit</button>
+        </div>
       </Form>
     </div>
   </div>

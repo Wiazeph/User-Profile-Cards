@@ -11,8 +11,12 @@
 @layer components {
   /* FormSection.vue */
 
+  .btn {
+    @apply w-full transition-all duration-200 ease-in-out rounded-md h-9;
+  }
+
   .submit-btn {
-    @apply bg-gray-100 hover:bg-gray-200 focus:bg-gray-300 transition-all duration-200 ease-in-out rounded-md h-9;
+    @apply bg-gray-100 hover:bg-gray-200;
   }
 
   /* FormSection.vue */
@@ -34,7 +38,7 @@
   }
 
   .form-container {
-    @apply w-[600px] rounded border-2 border-solid border-gray-100 shadow;
+    @apply w-[500px] rounded border-2 border-gray-100 shadow;
   }
 
   .form-submit {
@@ -42,11 +46,23 @@
   }
 
   .form-section-row {
-    @apply flex justify-between items-center;
+    @apply flex flex-col gap-1;
+  }
+
+  .row-top {
+    @apply flex items-center justify-between gap-10;
+  }
+
+  .error-message {
+    @apply text-red-600 text-sm text-right;
   }
 
   .form-input {
-    @apply w-2/3 rounded-md px-2 h-9 outline-none text-black bg-gray-100 border border-transparent focus:border-gray-500 focus:bg-white focus:ring-0;
+    @apply w-full rounded-md px-2 h-9 outline-none text-black bg-gray-100 border border-transparent focus:border-gray-500 focus:bg-white focus:ring-0;
+  }
+
+  .form-buttons {
+    @apply flex gap-5 w-full border-t-2 border-gray-100 pt-3;
   }
 
   /* FormSection.vue */
