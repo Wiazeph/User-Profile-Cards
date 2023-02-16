@@ -12,7 +12,7 @@
   /* FormSection.vue */
 
   .btn {
-    @apply w-full transition-all duration-200 ease-in-out rounded-md h-9;
+    @apply w-full transition-all duration-200 ease-in-out rounded-md h-9 select-none;
   }
 
   .submit-btn {
@@ -62,7 +62,7 @@
   }
 
   .form-input {
-    @apply w-full rounded-md px-2 h-9 outline-none text-black bg-gray-100 border border-transparent focus:border-gray-500 focus:bg-white focus:ring-0;
+    @apply w-full rounded-md px-2 h-9 outline-none text-black bg-gray-100 border border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 select-none;
   }
 
   .form-buttons {
