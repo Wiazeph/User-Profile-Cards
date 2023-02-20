@@ -38,11 +38,11 @@
   /* FormSection.vue */
 
   .form-section {
-    @apply flex flex-col items-center gap-12;
+    @apply flex flex-col items-center gap-12 text-center;
   }
 
   .form-container {
-    @apply w-[500px] rounded border-2 border-gray-100 shadow;
+    @apply w-full sm:w-[500px] rounded border-2 border-gray-100 shadow;
   }
 
   .form-submit {
