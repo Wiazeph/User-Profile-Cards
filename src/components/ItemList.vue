@@ -1,19 +1,19 @@
 <script setup>
-import axios from "axios";
+// import axios from "axios";
 
 import { useList } from "./useList";
 
 const { list } = useList();
 
-async function deleteUser(lt) {
-  const response = await axios.delete(`/users/${lt.id}.json`);
+// async function deleteUser(lt) {
+//   const response = await axios.delete(`/users/${lt.id}.json`);
 
-  if (response.status === 200) {
-    list.value = list.value.filter((i) => i.id !== lt.id);
+//   if (response.status === 200) {
+//     list.value = list.value.filter((i) => i.id !== lt.id);
 
-    console.log("Data has been deleted successfully...");
-  }
-}
+//     console.log("Data has been deleted successfully...");
+//   }
+// }
 
 async function copyCB(email) {
   await navigator.clipboard.writeText(email);
@@ -41,9 +41,9 @@ async function copyCB(email) {
             {{ ++index }}
           </div>
 
-          <button class="card-delete" @click="deleteUser(lt)">
+          <!-- <button class="card-delete" @click="deleteUser(lt)">
             <i class="card-delete-icon fa-solid fa-trash"></i>
-          </button>
+          </button> -->
         </div>
         <div class="card-header-bg"></div>
 
